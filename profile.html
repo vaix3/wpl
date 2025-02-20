@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - WPL Betting</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">WPL Betting</div>
+        <div class="nav-user">
+            <span id="userEmail"></span>
+            <a href="index.html" class="btn">Back to Home</a>
+            <button id="logoutBtn" class="btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container profile-container">
+        <section class="profile-summary">
+            <h2>Profile Summary</h2>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Total Bets</h3>
+                    <p id="totalBets">0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Matches Won</h3>
+                    <p id="matchesWon">0</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Matches Lost</h3>
+                    <p id="matchesLost">0</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="all-players-stats">
+            <h2>All Players Statistics</h2>
+            <div class="table-container">
+                <table class="bets-table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Total Bets</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allPlayersStatsBody">
+                        <!-- All players stats will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="firebase-config.js"></script>
+    <script src="profile.js"></script>
+</body>
+
+</html>

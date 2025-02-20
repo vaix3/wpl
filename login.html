@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WPL Betting</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>WPL Betting</h1>
+            <div class="login-form">
+                <input type="email" id="email" class="form-input" placeholder="Email" required>
+                <input type="password" id="password" class="form-input" placeholder="Password" required>
+                <button id="loginBtn" class="btn btn-primary">Login</button>
+                <button id="registerBtn" class="btn">Register</button>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+        </div>
+    </div>
+    <script src="firebase-config.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

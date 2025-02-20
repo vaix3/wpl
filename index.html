@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPL Betting</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">WPL Betting</div>
+        <div class="nav-user">
+            <span id="userEmail"></span>
+            <a href="profile.html" class="btn">Profile</a>
+            <button id="logoutBtn" class="btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="upcomingMatches" class="matches-section">
+            <h2>Upcoming Matches</h2>
+            <div class="matches-grid" id="matchesGrid">
+                <!-- Match cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="bettingForm" class="betting-section">
+            <h2>Place Your Bet</h2>
+            <div class="betting-form">
+                <select id="matchSelect" class="form-input">
+                    <option value="">Select a match</option>
+                </select>
+                <select id="teamSelect" class="form-input">
+                    <option value="">Select a team</option>
+                </select>
+                <input type="number" id="betAmount" class="form-input" placeholder="Bet amount in Rs." min="1">
+                <button id="placeBetBtn" class="btn btn-primary">Place Bet</button>
+            </div>
+        </section>
+
+        <section id="allBets" class="bets-section">
+            <h2>All Bets</h2>
+            <div class="table-container">
+                <table class="bets-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Match</th>
+                            <th>Team</th>
+                            <th>Amount (Rs.)</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="betsTableBody">
+                        <!-- Bets will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
